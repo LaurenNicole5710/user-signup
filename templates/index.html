@@ -23,39 +23,33 @@
     <h1><strong>User Sign-up</strong></h1>
     <p>Please fill in this form to create an account.</p>
 
-    <form method='POST'>
+    <form action="/validate" method='POST'>
         <label><strong>Create a user-name:</strong>
-            <input name="username" placeholder="Username" type="text" />
+            <input name="username" placeholder="Username" type="text" value={{username}}/>
         </label>
         <p class="error">{{username_error}}</p>
     
             <br>
     
         <label><strong>Enter a password:</strong>
-            <input name="password" placeholder="Password" type="password" />
+            <input name="password" placeholder="Password" type="password" value={{password}}/>
         </label>
         <p class="error">{{password_error}}</p>
 
         <label><strong>Re-enter your password:</strong>
-            <input name="confirm_password" placeholder="Re-enter password" type="password" />
+            <input name="confirm_password" placeholder="Re-enter password" type="password" value={{confirm_password}}/>
         </label>
-        <p class="error">{{password_error}}</p>
+        <p class="error">{{confirm_error}}</p>
             
             <br>
             
         <label><strong>Enter an E-mail (optional):</strong>
-            <input name="user_email" placeholder="E-mail" type="text" />
+            <input name="user_email" placeholder="E-mail" type="text" value={{user_email}}/>
         </label>
         <p class="error">{{email_error}}</p>
 
         <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-        </label>
-            
-            <br>
-
-        <label>
-            <input type="submit" value= "Submit"/>
+            <input type="submit" value="Submit"/>
         </label>
                 
         
