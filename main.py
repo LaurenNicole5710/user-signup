@@ -19,7 +19,7 @@ def validate_form():
     password_error = ''
     confirm_error = ''
     email_error = ''
-    form_error = ''
+    
 
     #-- ACCOUNT FOR EMPTY SPACES AND FIELDS--
     #username
@@ -60,7 +60,8 @@ def validate_form():
         return render_template('index.html', username=username, 
                         password=password, 
                         user_email=user_email, username_error=username_error,
-                        password_error=password_error, email_error=email_error 
+                        password_error=password_error, confirm_error= confirm_error, 
+                        email_error=email_error 
                         )
  
 
