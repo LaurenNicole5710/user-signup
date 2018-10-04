@@ -34,7 +34,7 @@ def validate_form():
         
     #password
     if password == '':
-        passord_error = "Please enter a password."
+        password_error = "Please enter a password."
     elif len(password) <= 3 or len(password)>= 20:
         password_error = "Please enter a password between 3 and 20 characters"
 
@@ -58,9 +58,9 @@ def validate_form():
         return render_template('welcome.html', username=username)
     else:
         return render_template('index.html', username=username, 
-                        password=password, 
+                        password=password, confirm_password=confirm_password,
                         user_email=user_email, username_error=username_error,
-                        password_error=password_error, confirm_error= confirm_error, 
+                        password_error=password_error, confirm_error=confirm_error, 
                         email_error=email_error 
                         )
  
