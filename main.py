@@ -28,14 +28,14 @@ def validate_form():
     elif ' ' in username:
         username_error = "Username may not contain any spaces."
         username = ''
-    elif len(username) <= 3 or len(username)>= 20: 
+    elif len(username) < 3 or len(username)> 20: 
         username_error = "Please enter a username between 3 and 20 characters."
         username = ''
         
     #password
     if password == '':
         password_error = "Please enter a password."
-    elif len(password) <= 3 or len(password)>= 20:
+    elif (len(password)) <3 or (len(password))> 20:
         password_error = "Please enter a password between 3 and 20 characters"
 
     #confirm
@@ -47,6 +47,9 @@ def validate_form():
     if user_email != '':
         if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", user_email):
             email_error = "Please enter a valid E-mail."
+            user_email = ''
+        elif len(user_email) < 3 or len(user_email)> 20: 
+            email_error = "Please enter an e-mail between 3 and 20 characters."
             user_email = ''
 
     #-- VERIFY LENGTH OF USERNAME AND PASSWORD <3  AND >20 --
@@ -64,5 +67,5 @@ def validate_form():
                         email_error=email_error 
                         )
  
-
+if __name__ == '__main__':
 app.run()
